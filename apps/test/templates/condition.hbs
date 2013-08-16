@@ -1,7 +1,7 @@
+<section>
 <header>
   <h1>{{ name }} </h1>
 </header>
-<section>
   <ul>
     {{#each treatments }}
     <li id={{ @key }}>
@@ -9,4 +9,12 @@
     </li>
     {{/each}}
   </ul>
+
+<footer>
+  <nav>
+  {{#each breadcrumb }}
+  <a href='{{this}}'>{{@key}}</a>
+  {{/each}}
+  </nav>
+</footer>
 </section>
