@@ -1,10 +1,13 @@
-TestApp = window.TestApp || {
-    Models: {},
-    Collections: {},
-    Routers: {},
-    Views: {}
-};
+define([
+       'jquery',
+       'underscore',
+       'backbone',
+       './routers/base_router'
+       ],
+       function($, _, Backbone, BaseRouter){
+         var initialize = function(){
+          BaseRouter.initialize();
+         }
 
-TestApp.init = function () {
-
-};
+         return { initialize: initialize };
+       });

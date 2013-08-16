@@ -1,21 +1,25 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Test Application Page</title>
+      <title>Test Application Page</title>
+      <script data-main="apps/main" src="lib/require.js"></script>
     </head>
     <body>
-        <h1>Test Application</h1>
-        <div>
-            <p>Welcome to WiserTogether test Backbone application.</p>
-        </div>
+      <div id='pageContainer'>
+        <header id='pageHeader'>
+          <h1>Test Application</h1>
+          <h2>Welcome to WiserTogether test Backbone application.</h2>
+          <nav>
+            <a href='#aneurysm'>Aneurysm</a>
+          </nav>
+        </header>
 
-        <script src="lib/jquery.js"></script>
-        <script src="lib/underscore.js"></script>
-        <script src="lib/backbone.js"></script>
-        <script src="lib/handlebars.js"></script>
-        <script src="apps/test/application.js"></script>
-        <script src="apps/test/models.js"></script>
-        <script>
-            TestApp.init();
-        </script>
+        <section id ='pageSection'>
+          <ul id='conditions'>
+            <li id='aneurysm'>
+            </li>
+          </ul>
+        </section>
+      </div>
     </body>
 </html>
