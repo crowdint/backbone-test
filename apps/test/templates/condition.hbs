@@ -1,1 +1,12 @@
-<div>Waka</div>
+<header>
+  <h1>{{ name }} </h1>
+</header>
+<section>
+  <ul>
+    {{#each treatments }}
+    <li id={{ @key }}>
+      <a href='#condition/{{../name}}/treatment/{{@key}}'>{{ display_name }}</a>
+    </li>
+    {{/each}}
+  </ul>
+</section>
