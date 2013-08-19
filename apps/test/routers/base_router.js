@@ -23,9 +23,9 @@ define([
               conditionModel = new ConditionModel();
               conditionView = new ConditionView({
                 model: conditionModel,
-                el: $('#pageSection'),
-                breadcrumbs: this.breadcrumbs
+                el: $('#pageSection')
               });
+              conditionView.addBreadcrumbs(this.breadcrumbs);
               conditionModel.fetch();
             },
 
@@ -36,17 +36,15 @@ define([
               treatmentView = new TreatmentView({
                 model: conditionModel,
                 el: $('#pageSection'),
-                treatment: treatment,
-                breadcrumbs: breadcrumbs
+                treatment: treatment
               });
+              treatmentView.addBreadcrumbs(breadcrumbs);
               conditionModel.fetch();
             },
 
             index: function() {
-              indexView = new IndexView({
-                el: $('#pageSection'),
-                breadcrumbs: {}
-              });
+              indexView = new IndexView({ el: $('#pageSection') });
+              indexView.addBreadcrumbs({});
               indexView.render()
             }
          });

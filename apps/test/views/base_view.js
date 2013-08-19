@@ -11,7 +11,6 @@ define(['jquery', 'underscore', 'backbone', './breadcrumbs_view'],
           render: function(){
             if (typeof(this.beforeRender) === 'function') { this.beforeRender(); }
             this.$el.html(this.tmpl(this.data));
-            this.addBreadcrumbs((this.options.breadcrumbs));
             return this;
           },
 
