@@ -1,7 +1,7 @@
-<section>
 <header>
   <h1>{{ name }} </h1>
 </header>
+<article>
   <ul>
     {{#each treatments }}
     <li id={{ @key }}>
@@ -9,7 +9,7 @@
     </li>
     {{/each}}
   </ul>
-
+</article>
 <footer>
 <!--TODO(mumo) move this to a handlerbar helper -->
   <nav>
@@ -18,4 +18,3 @@
   {{/each}}
   </nav>
 </footer>
-</section>

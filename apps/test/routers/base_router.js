@@ -10,7 +10,7 @@ define([
        function($, _, Backbone, IndexView, ConditionView, ConditionModel, TreatmentView){
          var BaseRouter = Backbone.Router.extend({
             initialize: function(){
-              this.breadcrumb = { 'Index' : '#' };
+              this.breadcrumbs = { 'Index' : '#' };
             },
 
             routes: {
@@ -24,27 +24,28 @@ define([
               conditionView = new ConditionView({
                 model: conditionModel,
                 el: $('#pageSection'),
-                breadcrumb: this.breadcrumb
+                breadcrumbs: this.breadcrumbs
               });
               conditionModel.fetch();
             },
 
             treatment: function(condition, treatment) {
               conditionModel = new ConditionModel();
-              breadcrumb = _.clone(this.breadcrumb)
-              breadcrumb[condition] = '#condition/' + condition;
+              breadcrumbs = _.clone(this.breadcrumbs)
+              breadcrumbs[condition] = '#condition/' + condition;
               treatmentView = new TreatmentView({
                 model: conditionModel,
                 el: $('#pageSection'),
                 treatment: treatment,
-                breadcrumb: breadcrumb
+                breadcrumbs: breadcrumbs
               });
               conditionModel.fetch();
             },
 
             index: function() {
               indexView = new IndexView({
-                el: $('#pageSection')
+                el: $('#pageSection'),
+                breadcrumbs: {}
               });
               indexView.render()
             }
@@ -56,5 +57,4 @@ define([
          };
 
          return { initialize: initialize };
-
        });

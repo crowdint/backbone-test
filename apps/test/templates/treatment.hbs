@@ -1,17 +1,8 @@
-<section>
-{{#if error }}
-  <header><h1>{{ error }}</h1></header>
-{{else}}
-  <header><h1>{{ display_name }}</h1></header>
+<header>
+<h1>{{ display_name }}{{ error }}</h1>
+</header>
+{{#if display_name }}
+<article>
   <p>{{ description }}</p>
+</article>
 {{/if}}
-
-  <footer>
-    <nav>
-    {{#each breadcrumb }}
-      <a href='{{this}}'>{{@key}}</a>
-    {{/each}}
-    </nav>
-  </footer>
-</section>
-
