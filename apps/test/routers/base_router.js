@@ -31,12 +31,13 @@ define([
 
             treatment: function(condition, treatment) {
               conditionModel = new ConditionModel();
-              this.breadcrumb[condition] = '#condition/' + condition;
+              breadcrumb = _.clone(this.breadcrumb)
+              breadcrumb[condition] = '#condition/' + condition;
               treatmentView = new TreatmentView({
                 model: conditionModel,
                 el: $('#pageSection'),
                 treatment: treatment,
-                breadcrumb: this.breadcrumb
+                breadcrumb: breadcrumb
               });
               conditionModel.fetch();
             },
