@@ -7,18 +7,17 @@ require.config({
     hbs: '../lib/hbs'
   },
   shim: {
+    'underscore': {
+      exports: '_'
+    },
     'backbone': {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
-    },
-    'underscore': {
-      deps: [],
-      exports: '_'
     }
   }
 });
 
-require(['./test/application'],
+require(['./js/application'],
         function(AppMain){
           AppMain.initialize();
         });

@@ -1,0 +1,4 @@
+describe('Model :: Condition', function() {
+
+
+});

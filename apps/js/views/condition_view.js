@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', './base_view', 'hbs!test/templates/condition'],
+define(['jquery', 'underscore', 'backbone', './base_view', 'hbs!js/templates/condition'],
        function($, _, Backbone, BaseView, tmplCondition){
         var ConditionView = BaseView.extend({
           tmpl: tmplCondition,

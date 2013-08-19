@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', 'hbs!test/templates/breadcrumbs'],
+define(['jquery', 'underscore', 'backbone', 'hbs!js/templates/breadcrumbs'],
        function($, _, Backbone, tmplBreadcrumbs){
         var BreadcrumbsView = Backbone.View.extend({
           initialize: function(options){

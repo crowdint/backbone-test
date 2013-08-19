@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'backbone', './base_view', 'hbs!test/templates/treatment'],
+define(['jquery', 'underscore', 'backbone', './base_view', 'hbs!js/templates/treatment'],
        function($, _, Backbone, BaseView, tmplTreatment){
         var TreatmentView = BaseView.extend({
           tmpl: tmplTreatment,

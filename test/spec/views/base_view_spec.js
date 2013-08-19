@@ -1,0 +1,4 @@
+describe('Views :: Base', function() {
+
+
+});
