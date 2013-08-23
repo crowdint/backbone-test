@@ -1,9 +1,9 @@
-define(['jquery', 'underscore', 'backbone', './breadcrumbs_view'],
+define(['jquery', 'underscore', 'backbone', 'views/breadcrumbs_view'],
        function($, _, Backbone, BreadcrumbsView){
         var BaseView = Backbone.View.extend({
           initialize: function(options){
             this.options = options;
-            if (this.model) { this.listenTo(this.model, "change", this.render); }
+            if (this.model) { this.listenTo(this.model, 'change', this.render); }
           },
 
           data: {},

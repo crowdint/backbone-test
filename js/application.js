@@ -2,7 +2,7 @@ define([
        'jquery',
        'underscore',
        'backbone',
-       './routers/base_router'
+       'routers/base_router'
        ],
        function($, _, Backbone, BaseRouter){
          var initialize = function(){

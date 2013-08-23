@@ -1,4 +1,3 @@
 describe('Views :: Base', function() {
 
-
 });

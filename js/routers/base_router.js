@@ -2,10 +2,10 @@ define([
        'jquery',
        'underscore',
        'backbone',
-       '../views/index_view',
-       '../views/condition_view',
-       '../models/condition_model',
-       '../views/treatment_view'
+       'views/index_view',
+       'views/condition_view',
+       'models/condition_model',
+       'views/treatment_view'
        ],
        function($, _, Backbone, IndexView, ConditionView, ConditionModel, TreatmentView){
          var BaseRouter = Backbone.Router.extend({
