@@ -9,6 +9,7 @@ require.config({
     hbs: 'lib/hbs',
     jasmine: '../test/lib/jasmine',
     'jasmine-html': '../test/lib/jasmine-html',
+    requireHelper: '../test/lib/requireHelper',
     spec: '../test/spec'
   },
   shim: {
@@ -23,12 +24,14 @@ require.config({
       exports: 'jasmine'
     },
     'jasmine-html': {
-      deps: ['jasmine'],
+      deps: ['jasmine', 'requireHelper'],
       exports: 'jasmine'
     }
+  },
+  hbs: {
+    disableI18n: true
   }
 });
-
 
 require(['underscore', 'jquery', 'jasmine-html'], function(_, $, jasmine){
 
