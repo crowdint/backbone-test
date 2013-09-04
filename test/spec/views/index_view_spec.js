@@ -1,19 +1,23 @@
-describe('Views :: Index', function() {
-  var view;
+define(['views/index_view'], function(indexView){
 
-  requireDependencies(['views/index_view'], function(indexView){
-    view = new indexView();
-    $('#sandbox').html(view.render().el);
-  });
+  describe('Views :: Index', function() {
+    var view;
 
-  afterEach(function(){
-    view.remove();
-  });
+    beforeEach(function(){
+      view = new indexView();
+      view.render()
+    });
 
-  describe('rendering template', function(){
-    it('shows Aneurysm link', function(){
-      var link = view.$el.find('article a');
-      expect(link.text()).toEqual('Aneurysm');
+    afterEach(function(){
+      view.remove();
+    });
+
+    describe('rendering template', function(){
+      it('shows Aneurysm link', function(){
+        var link = view.$el.find('article a');
+        expect(link.text()).toEqual('Aneurysm');
+      });
     });
   });
+
 });

@@ -1,11 +1,11 @@
 require.config({
-  baseUrl: './js/',
+  baseUrl: 'src',
   paths: {
-    jquery: 'lib/jquery',
-		underscore: 'lib/underscore',
-    backbone: 'lib/backbone',
-    Handlebars: 'lib/Handlebars',
-    hbs: 'lib/hbs'
+    jquery: '../lib/jquery',
+    underscore: '../lib/underscore',
+    backbone: '../lib/backbone',
+    Handlebars: '../lib/Handlebars',
+    hbs: '../lib/hbs'
   },
   shim: {
     'underscore': {

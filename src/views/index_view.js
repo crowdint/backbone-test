@@ -6,3 +6,4 @@ define(['jquery', 'underscore', 'backbone', 'views/base_view', 'hbs!templates/in
 
         return IndexView;
        });
+

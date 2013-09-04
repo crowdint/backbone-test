@@ -1,19 +1,23 @@
-describe('Model :: Condition', function() {
-  var condition;
+define(['models/condition_model'], function(ConditionModel){
 
-  requireDependencies(['models/condition_model'], function(ConditionModel){
-    condition = new ConditionModel();
-  });
+  describe('Model :: Condition', function() {
+    var condition;
 
-  afterEach(function(){
-    condition.destroy();
-  });
+    beforeEach(function(){
+      condition = new ConditionModel();
+    });
 
-  describe('.fetch()', function(){
-    it('returns data', function(){
-      expect(condition.fetch()).not.toBe(null);
-      expect(condition.get('name')).toEqual('Aneurysm');
+    afterEach(function(){
+      condition.destroy();
+    });
+
+    describe('.fetch()', function(){
+      it('returns data', function(){
+        expect(condition.fetch()).not.toBe(null);
+        expect(condition.get('name')).toEqual('Aneurysm');
+      });
     });
   });
 
 });
+

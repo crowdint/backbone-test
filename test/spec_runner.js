@@ -1,16 +1,21 @@
+var tests = [];
+
+for (var file in window.__karma__.files) {
+  if (window.__karma__.files.hasOwnProperty(file)) {
+    if (/_spec\.js$/.test(file)) {
+      tests.push(file);
+    }
+  }
+}
+
 require.config({
-  baseUrl: '../js',
-  urlArgs: 'cb=' + Math.random(),
+  baseUrl: '/base/src',
   paths: {
-    jquery: 'lib/jquery',
-		underscore: 'lib/underscore',
-    backbone: 'lib/backbone',
-    Handlebars: 'lib/Handlebars',
-    hbs: 'lib/hbs',
-    jasmine: '../test/lib/jasmine',
-    'jasmine-html': '../test/lib/jasmine-html',
-    requireHelper: '../test/lib/requireHelper',
-    spec: '../test/spec'
+    jquery: '/base/lib/jquery',
+    underscore: '/base/lib/underscore',
+    backbone: '/base/lib/backbone',
+    Handlebars: '/base/lib/Handlebars',
+    hbs: '/base/lib/hbs'
   },
   shim: {
     underscore: {
@@ -19,47 +24,11 @@ require.config({
     backbone: {
       deps: ['underscore', 'jquery'],
       exports: 'Backbone'
-    },
-    jasmine: {
-      exports: 'jasmine'
-    },
-    'jasmine-html': {
-      deps: ['jasmine', 'requireHelper'],
-      exports: 'jasmine'
     }
   },
   hbs: {
     disableI18n: true
-  }
-});
-
-require(['underscore', 'jquery', 'jasmine-html'], function(_, $, jasmine){
-
-  var jasmineEnv = jasmine.getEnv();
-  jasmineEnv.updateInterval = 1000;
-
-  var htmlReporter = new jasmine.HtmlReporter();
-
-  jasmineEnv.addReporter(htmlReporter);
-
-  jasmineEnv.specFilter = function(spec) {
-    return htmlReporter.specFilter(spec);
-  };
-
-  var specs = [];
-
-  specs.push('spec/routers/base_router_spec');
-  specs.push('spec/models/condition_model_spec');
-  specs.push('spec/views/base_view_spec');
-  specs.push('spec/views/breadcrumbs_view_spec');
-  specs.push('spec/views/condition_view_spec');
-  specs.push('spec/views/index_view_spec');
-  specs.push('spec/views/treatment_view_spec');
-
-  $(function(){
-    require(specs, function(){
-      jasmineEnv.execute();
-    });
-  });
-
+  },
+  deps: tests,
+  callback: window.__karma__.start
 });
