@@ -28,7 +28,9 @@ require.config({
   },
   hbs: {
     disableI18n: true
-  },
-  deps: tests,
-  callback: window.__karma__.start
+  }
+});
+
+require(tests, function() {
+  window.__karma__.start();
 });

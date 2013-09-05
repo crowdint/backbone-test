@@ -5,8 +5,10 @@ define(['jquery', 'underscore', 'backbone', 'hbs!templates/breadcrumbs'],
             this.data = options;
           },
 
+          template: tmplBreadcrumbs,
+
           render: function(){
-            this.$el.html(tmplBreadcrumbs(this.data));
+            this.$el.html(this.template(this.data));
             return this;
           }
         });

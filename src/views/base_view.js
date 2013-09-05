@@ -1,5 +1,5 @@
 define(['jquery', 'underscore', 'backbone', 'views/breadcrumbs_view'],
-       function($, _, Backbone, BreadcrumbsView){
+       function($, _, Backbone){
         var BaseView = Backbone.View.extend({
           initialize: function(options){
             this.options = options;
@@ -14,11 +14,7 @@ define(['jquery', 'underscore', 'backbone', 'views/breadcrumbs_view'],
             return this;
           },
 
-          addBreadcrumbs: function(breadcrumbs){
-            var breadcrumbsView = new BreadcrumbsView({
-              el: $('#pageNav'),
-              breadcrumbs: breadcrumbs
-            });
+          addBreadcrumbs: function(breadcrumbsView){
             breadcrumbsView.render();
           }
         });

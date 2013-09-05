@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "karma": ">= 0.10.2",
+    "karma-osx-reporter": ">= 0.0.3",
+    "karma-coverage": ">= 0.1.0"
+  }
+}

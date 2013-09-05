@@ -11,14 +11,13 @@ module.exports = function(config) {
     // frameworks to use
     frameworks: ['jasmine', 'requirejs'],
 
-
     // list of files / patterns to load in the browser
     files: [
       'test/spec_runner.js',
       {pattern: 'lib/**/*.js', included: false},
       {pattern: 'src/templates/*.hbs', included: false},
       {pattern: 'src/**/*.js', included: false},
-      {pattern: 'test/**/*.js', included: false}
+      {pattern: 'test/**/*.js', included: false},
     ],
 
 
@@ -58,7 +57,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // If browser does not capture in given timeout [ms], kill it
@@ -70,7 +69,7 @@ module.exports = function(config) {
     singleRun: false,
 
     preprocessors: {
-      'src/**/*.js': ['coverage'],
+      'src/**/*.js': ['coverage']
     }
   });
 };
