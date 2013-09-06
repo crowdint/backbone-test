@@ -50,3 +50,46 @@ Submit your results by emailing us a patchset created via the git format-patch
 command.
 
 Email your patchset to: tech-jobs@wisertogether.com
+
+
+---------
+
+Solution
+========
+
+Running tests
+-------------
+We used Karma, a javascript test runner, you'll need to install node.js and npm first in order to meet our dependencies.
+
+1. Install [Node.js](http://nodejs.org/download/)
+2. Install dependencies
+		
+		npm install
+		
+3. Start the test runner
+
+		karma start
+		
+4. Run the tests
+
+		karma run	
+
+Running the app
+---------------
+The handlebars plugin for require.js has a problem loading in chrome, it throws an cross domain error, so the solution is to have the app running in a server, we created a small rack app to do that.
+
+1. Install bundler
+
+		gem install bundler
+		
+2. Install the dependencies
+		
+		bundle install
+		
+3. Run the app server
+
+		bundle exec rackup
+
+4. Open the [app in the browser](http://0.0.0.0:9292)
+
+	
